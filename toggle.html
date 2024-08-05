@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Content Visibility and Color</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .hidden {
+            display: none;
+        }
+        .red {
+            color: red;
+        }
+        .green {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        This is the content to be toggled.
+    </div>
+    <button id="toggleButton">Toggle</button>
+
+    <script>
+        $(document).ready(function() {
+            $("#toggleButton").click(function() {
+                var content = $("#content");
+                if (content.hasClass("hidden")) {
+                    content.removeClass("hidden red").addClass("green");
+                } else {
+                    content.addClass("hidden red").removeClass("green");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
